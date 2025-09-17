@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,8 +17,10 @@
     <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 
+
 <body>
     <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
+
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top gradient-navbar" aria-label="Primary">
         <div class="container">
@@ -27,6 +30,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
             <div class="collapse navbar-collapse" id="primaryNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
@@ -34,6 +38,7 @@
                     <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                 </ul>
+
 
                 <form class="d-flex ms-auto" id="programSearchForm" role="search" aria-label="Search programs">
                     <input class="form-control me-2" id="programSearchInput" type="search"
@@ -46,6 +51,7 @@
         </div>
     </nav>
 
+
     <main id="main">
         <!-- Hero -->
         <header id="hero" class="d-flex flex-column justify-content-center text-center" aria-labelledby="hero-title">
@@ -55,6 +61,7 @@
                 <a href="#programs" class="btn btn-lg btn-gradient mt-3">Explore Programs</a>
             </div>
         </header>
+
 
         <!-- About Summary -->
         <section id="about" class="py-5" aria-labelledby="about-title">
@@ -67,6 +74,7 @@
                 </p>
             </div>
         </section>
+
 
         <!-- Features -->
         <section id="features" class="bg-light py-5" aria-labelledby="features-title">
@@ -112,10 +120,12 @@
             </div>
         </section>
 
+
         <!-- commit: refactor(programs-home): show 3 highlight cards + CTA to full catalog -->
         <section id="programs" class="py-5" aria-labelledby="programs-title">
             <div class="container">
                 <h2 class="section-title" id="programs-title">Programs</h2>
+
 
                 <div class="row g-4" id="programCards">
                     <!-- Math Foundations -->
@@ -123,55 +133,58 @@
                         <div class="card program-card h-100" data-title="Math Foundations"
                             data-keywords="math arithmetic algebra class 6 class 7"
                             data-desc="Sharpen basics with Algebra, Geometry, and problem‑solving practice."
-                            data-link="math.html"
+                            data-link="sub-pages/math.html"
                             data-img="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80">
                             <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
                                 class="card-img-top" alt="Math Foundations" width="800" height="450" loading="lazy"
                                 decoding="async">
                             <div class="card-body d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Math Foundations</h5>
-                                <a href="math.html" class="btn btn-sm btn-gradient open-page-btn"
+                                <a href="sub-pages/math.html" class="btn btn-sm btn-gradient open-page-btn"
                                     aria-label="Open Math Foundations">Explore</a>
                             </div>
                         </div>
                     </div>
+
 
                     <!-- Science Adventures -->
                     <div class="col-md-4">
                         <div class="card program-card h-100" data-title="Coding Basics"
                             data-keywords="coding python javascript c git projects"
                             data-desc="Start with Python, JavaScript, C, and Git to build real projects."
-                            data-link="coding.html"
+                            data-link="sub-pages/coding.html"
                             data-img="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80">
                             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
                                 class="card-img-top" alt="Coding Basics" width="800" height="450" loading="lazy"
                                 decoding="async" />
                             <div class="card-body d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Coding Basics</h5>
-                                <a href="coding.html" class="btn btn-learn open-page-btn"
+                                <a href="sub-pages/coding.html" class="btn btn-learn open-page-btn"
                                     aria-label="Open Coding Basics">Explore</a>
                             </div>
                         </div>
                     </div>
+
 
                     <!-- Digital Skills -->
                     <div class="col-md-6 col-lg-4">
                         <div class="card program-card h-100" data-title="Digital Skills"
                             data-keywords="digital literacy web coding cyber safety ai"
                             data-desc="Learn web basics, coding, cyber safety, and AI fundamentals."
-                            data-link="digital.html"
+                            data-link="sub-pages/digital.html"
                             data-img="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80">
                             <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80"
                                 class="card-img-top" alt="Digital Skills" width="800" height="450" loading="lazy"
                                 decoding="async">
                             <div class="card-body d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Digital Skills</h5>
-                                <a href="digital.html" class="btn btn-sm btn-gradient open-page-btn"
+                                <a href="sub-pages/digital.html" class="btn btn-sm btn-gradient open-page-btn"
                                     aria-label="Open Digital Skills">Explore</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- commit: feat(programs-cta): link to full catalog -->
                 <div class="text-center mt-4">
@@ -180,11 +193,13 @@
                     </a>
                 </div>
 
+
                 <p id="noResults" class="text-center text-muted mt-3 d-none" role="status" aria-live="polite">
                     No programs found. Try another search.
                 </p>
             </div>
         </section>
+
 
 
         <!-- Impact -->
@@ -209,12 +224,17 @@
         </section>
     </main>
 
+
     <footer class="py-4 text-center small text-muted">
         © 2025 EduNabha. All rights reserved.
     </footer>
 
+
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="assets/js/scripts.js"></script>
+    <script defer src="../assets/js/auth-guard.js"></script>
+    <script defer src="../assets/js/course-manager.js"></script>
+    <script defer src="../assets/js/scripts.js"></script>
 </body>
+
 
 </html>
