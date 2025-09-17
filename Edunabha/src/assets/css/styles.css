@@ -1,0 +1,127 @@
+/* Page-level layout and small utilities */
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-color);
+    background-color: #ffffff;
+}
+
+/* Light section backgrounds */
+#features {
+    background: var(--surface-alt);
+}
+
+/* Forms */
+#programSearchForm .form-control {
+    border-radius: 999px;
+}
+
+#programSearchForm .btn {
+    border-radius: 999px;
+}
+
+/* Program search feedback */
+#noResults {
+    font-style: italic;
+}
+
+/* Spacing */
+section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Links in light cards */
+.feature-card a,
+.feature-card button {
+    text-decoration: none;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    letter-spacing: 0.2px;
+}
+
+/* Misc */
+.lead {
+    color: var(--text-color);
+}
+
+/* commit: feat(programs-index-cards): image cards with lift and consistent radii */
+.card.program-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+    overflow: hidden;
+}
+
+.card.program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(10, 48, 91, 0.12);
+}
+
+.card.program-card .card-img-top {
+    display: block;
+    width: 100%;
+    height: 210px;
+    /* keeps a consistent visual ratio */
+    object-fit: cover;
+    /* crops images neatly inside the card */
+}
+
+/* commit: feat(programs-index-buttons): align small Explore button with brand gradient */
+.card.program-card .open-page-btn {
+    border: 0;
+    background-image: var(--brand-gradient);
+    color: #ffffff;
+}
+
+.card.program-card .open-page-btn:hover,
+.card.program-card .open-page-btn:focus {
+    color: #ffffff;
+    filter: brightness(.95);
+}
+
+/* commit: feat(programs-preview-modal): compact two-column modal (image left, text right) */
+#programPreviewModal .modal-dialog {
+    max-width: 520px;
+    /* compact dialog per design */
+}
+
+#programPreviewModal .modal-header {
+    border-bottom: 1px solid var(--border);
+}
+
+#programPreviewModal .modal-footer {
+    border-top: 1px solid var(--border);
+}
+
+#programPreviewModal .preview-img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+#programPreviewModal .btn.btn-outline-secondary {
+    border-color: var(--border);
+}
+
+/* commit: chore(programs-responsive): small-screen tweaks */
+@media (max-width: 575.98px) {
+    .card.program-card .card-img-top {
+        height: 190px;
+    }
+
+    #programPreviewModal .preview-img {
+        height: 180px;
+    }
+}

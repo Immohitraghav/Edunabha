@@ -1,0 +1,73 @@
+/* Shared theme */
+:root {
+    --blue: #2a7fbd;
+    --green: #2bb673;
+    --green-blue-gradient: linear-gradient(135deg, var(--blue), var(--green));
+    --button-gradient: linear-gradient(45deg, var(--blue), var(--green));
+}
+
+/* Navbar gradient */
+.gradient-navbar {
+    background: var(--green-blue-gradient);
+}
+
+/* Sub hero */
+.sub-hero {
+    background: linear-gradient(135deg, rgba(42, 127, 189, 0.1), rgba(43, 182, 115, 0.1));
+    padding: 2rem 1rem;
+}
+
+/* Topic cards */
+.topic-card {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.topic-card:hover,
+.topic-card:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.topic-card .card-img-top {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.topic-card .card-title {
+    font-weight: 700;
+}
+
+/* CTA button */
+.btn-learn {
+    background-image: var(--button-gradient);
+    color: #fff;
+    border: none;
+    padding: 0.45rem 0.95rem;
+    border-radius: 24px;
+    font-weight: 600;
+}
+
+.btn-learn:hover,
+.btn-learn:focus {
+    background: linear-gradient(45deg, var(--blue), var(--green));
+    color: #fff;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #2a7fbd;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .topic-card {
+        transition: none !important;
+    }
+}

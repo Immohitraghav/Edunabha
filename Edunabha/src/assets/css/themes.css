@@ -1,0 +1,148 @@
+/* Theme tokens and gradient utilities */
+:root {
+    /* Brand */
+    --brand-1: #3aaf85;
+    --brand-2: #2a7fbd;
+    --brand-gradient: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+
+    /* Surfaces & text */
+    --text-color: #0b2239;
+    --muted-text: #6c757d;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+
+    /* Effects */
+    --border: rgba(42, 127, 189, 0.15);
+    --shadow: 0 0.75rem 1.5rem rgba(10, 48, 91, 0.08);
+    --radius: 14px;
+}
+
+/* Global gradient helpers */
+.gradient-bg {
+    background-image: var(--brand-gradient);
+}
+
+/* Navbar with gradient */
+.navbar.gradient-navbar {
+    background-image: var(--brand-gradient);
+    box-shadow: var(--shadow);
+}
+
+.navbar.gradient-navbar .navbar-brand,
+.navbar.gradient-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.navbar.gradient-navbar .nav-link.active,
+.navbar.gradient-navbar .nav-link:hover,
+.navbar.gradient-navbar .nav-link:focus {
+    color: #ffffff;
+}
+
+/* Hero section */
+#hero {
+    min-height: 58vh;
+    color: #ffffff;
+    background-image: var(--brand-gradient);
+    padding: 6rem 0;
+}
+
+#hero .btn {
+    box-shadow: var(--shadow);
+}
+
+/* Buttons */
+.btn-gradient {
+    background-image: var(--brand-gradient);
+    color: #ffffff;
+    border: 0;
+}
+
+.btn-gradient:hover,
+.btn-gradient:focus {
+    filter: brightness(0.95);
+    color: #ffffff;
+}
+
+/* Section title underline */
+.section-title {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    background-image: var(--brand-gradient);
+}
+
+/* Cards and icons */
+.feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(10, 48, 91, 0.12);
+}
+
+.feature-icon,
+.impact-icon {
+    font-size: 2rem;
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Impact */
+.impact-item {
+    padding: 1rem;
+}
+
+.impact-desc {
+    color: var(--text-color);
+}
+
+/* Programs */
+.program-card {
+    display: block;
+}
+
+#programs .feature-card button {
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: var(--surface-alt);
+    border-top: 1px solid var(--border);
+}
+
+/* Accessible skip link: visible on focus per Bootstrap helpers */
+.skip-link.visually-hidden-focusable:not(:focus) {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.skip-link.visually-hidden-focusable:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1050;
+    background-image: var(--brand-gradient);
+    color: #ffffff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(42, 127, 189, 0.25);
+}

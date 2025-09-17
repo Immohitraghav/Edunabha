@@ -1,0 +1,65 @@
+:root {
+    --blue: #2a7fbd;
+    --green: #2bb673;
+    --green-blue-gradient: linear-gradient(135deg, var(--blue), var(--green));
+    --button-gradient: linear-gradient(45deg, var(--blue), var(--green));
+}
+
+.gradient-navbar {
+    background: var(--green-blue-gradient);
+}
+
+.sub-hero {
+    background: linear-gradient(135deg, rgba(42, 127, 189, 0.1), rgba(43, 182, 115, 0.1));
+    padding: 2rem 1rem;
+}
+
+.course-card {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover,
+.course-card:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.course-card .card-img-top {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.course-card .card-title {
+    font-weight: 700;
+}
+
+.btn-learn {
+    background-image: var(--button-gradient);
+    color: #fff;
+    border: none;
+    padding: 0.45rem 0.95rem;
+    border-radius: 24px;
+    font-weight: 600;
+}
+
+.btn-learn:hover,
+.btn-learn:focus {
+    background: linear-gradient(45deg, var(--blue), var(--green));
+    color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #2a7fbd;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .course-card {
+        transition: none !important;
+    }
+}

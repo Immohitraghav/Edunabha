@@ -1,0 +1,120 @@
+/* commit: feat(programs-hero): add gradient hero aligned to brand */
+.hero {
+    background-image: var(--brand-gradient);
+    color: #ffffff;
+    padding: 5rem 0 4rem;
+    text-align: center;
+}
+
+/* commit: style(brand-highlight): gradient text accent in hero */
+.hero .brand {
+    font-weight: 700;
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #fff;
+}
+
+/* commit: feat(hero-cta): rounded white call-to-action with soft shadow */
+.cta-btn {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #0b2239;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+    filter: brightness(0.97);
+    color: #0b2239;
+}
+
+/* commit: feat(card-grid): image program cards with subtle lift + ratio */
+.card.program-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+    overflow: hidden;
+}
+
+.card.program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(10, 48, 91, 0.12);
+}
+
+.card.program-card .card-img-top {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* commit: feat(btn-learn): gradient action consistent with site buttons */
+.btn-learn {
+    background-image: var(--brand-gradient);
+    border: 0;
+    color: #ffffff;
+}
+
+.btn-learn:hover,
+.btn-learn:focus {
+    color: #ffffff;
+    filter: brightness(.95);
+}
+
+/* commit: feat(modal-preview-compact): compact two-column modal with brand accents */
+#programPreviewModal .modal-dialog {
+    /* default bootstrap size is ~500px; keep compact with a small bump for layout */
+    max-width: 520px;
+}
+
+#programPreviewModal .modal-header {
+    border-bottom: 1px solid var(--border);
+}
+
+#programPreviewModal .modal-footer {
+    border-top: 1px solid var(--border);
+}
+
+#programPreviewModal .btn.btn-outline-secondary {
+    border-color: var(--border);
+}
+
+/* commit: style(modal-image): fixed-height cover image on left */
+#programPreviewModal .preview-img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* commit: style(modal-points): tidy spacing for quick facts list */
+#programPreviewPoints {
+    padding-left: 1rem;
+}
+
+#programPreviewPoints li {
+    margin-bottom: .25rem;
+}
+
+/* commit: chore(responsive): tweak hero spacing and card image on small screens */
+@media (max-width: 575.98px) {
+    .hero {
+        padding: 3.5rem 0 3rem;
+    }
+
+    .card.program-card .card-img-top {
+        height: 190px;
+    }
+
+    #programPreviewModal .preview-img {
+        height: 180px;
+    }
+
+    /* stack mode image */
+}

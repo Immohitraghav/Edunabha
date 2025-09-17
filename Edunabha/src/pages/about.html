@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About – EduNabha</title>
+
+    <meta name="description"
+        content="EduNabha enables inclusive, high-quality digital learning for rural students with offline-first access, teacher analytics, and AI-personalized learning paths." />
+    <meta name="theme-color" content="#2a7fbd" />
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About EduNabha" />
+    <meta property="og:description" content="Inclusive, high-quality digital learning for every rural student." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/about.html" />
+    <meta property="og:image" content="https://example.com/assets/images/og-about.jpg" />
+    <meta property="og:site_name" content="EduNabha" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About EduNabha" />
+    <meta name="twitter:description" content="Inclusive, high-quality digital learning for every rural student." />
+    <meta name="twitter:image" content="https://example.com/assets/images/og-about.jpg" />
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EduNabha",
+    "url": "https://example.com/",
+    "logo": "https://example.com/assets/images/logo.png",
+    "description": "Inclusive, high-quality digital learning for rural schools.",
+    "email": "hello@example.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/example",
+      "https://x.com/example"
+    ]
+  }
+  </script>
+
+    <!-- Bootstrap CSS and Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Site CSS (load tokens first, then base, then page) -->
+    <link rel="stylesheet" href="../assets/css/themes.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/about.css" />
+</head>
+
+<body>
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top gradient-navbar" aria-label="Primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">EduNabha</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+
+                <form class="d-flex ms-auto" action="index.html#programs" role="search" aria-label="Search programs">
+                    <input class="form-control me-2" type="search" placeholder="Search programs..."
+                        aria-label="Search programs" />
+                    <button class="btn btn-gradient" type="submit" aria-label="Submit program search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Gradient hero matches site theme -->
+        <header class="inner-hero text-white text-center" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Who We Are</h1>
+                <p class="lead">Our goal is inclusive, high-quality digital learning for every rural student.</p>
+                <a href="#feedback" class="btn btn-light mt-3" id="feedbackCta">Share Feedback</a>
+            </div>
+        </header>
+
+        <section class="py-5" id="story" aria-labelledby="story-title">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 id="story-title" class="mb-3">Our Story</h2>
+                        <p>
+                            EduNabha was formed by team CSWD GAMMA for Smart India Hackathon 2025 to solve digital
+                            learning access for rural schools with practical, culturally contextual solutions.
+                        </p>
+
+                        <h3 class="mt-4 mb-3">Our Goal</h3>
+                        <ul>
+                            <li>Deliver accessible e-learning with offline-first design.</li>
+                            <li>Empower teachers via analytics and simple tools.</li>
+                            <li>Support students with AI-personalized learning paths.</li>
+                            <li>Foster equitable outcomes regardless of connectivity.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="p-4 rounded shadow-sm bg-white feature-card">
+                            <h4 class="mb-3">Share Feedback</h4>
+                            <p class="text-muted">Help improve EduNabha by sharing ideas, issues, or requests.</p>
+
+                            <!-- Netlify Forms with honeypot + reCAPTCHA -->
+                            <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                                data-netlify-recaptcha="true" id="feedback" class="needs-validation" novalidate>
+                                <input type="hidden" name="form-name" value="feedback" />
+
+                                <!-- Honeypot field -->
+                                <div class="visually-hidden">
+                                    <label for="bot-field">Don’t fill this out if you’re human</label>
+                                    <input id="bot-field" name="bot-field" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="fb-name">Name</label>
+                                    <input id="fb-name" name="name" class="form-control" autocomplete="name" required />
+                                    <div class="invalid-feedback">Please enter a name.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="fb-email">Email</label>
+                                    <input id="fb-email" name="email" type="email" class="form-control"
+                                        autocomplete="email" inputmode="email" required />
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="fb-msg">Feedback</label>
+                                    <textarea id="fb-msg" name="message" rows="4" class="form-control"
+                                        required></textarea>
+                                    <div class="invalid-feedback">Please add a message.</div>
+                                </div>
+
+                                <!-- Netlify reCAPTCHA placeholder -->
+                                <div class="mb-3">
+                                    <div data-netlify-recaptcha="true"></div>
+                                </div>
+
+                                <button class="btn btn-gradient w-100" type="submit">Send Feedback</button>
+                            </form>
+
+                            <p class="small text-muted mt-2 mb-0">This form is processed by Netlify Forms on deploy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="py-5 bg-light" id="values" aria-labelledby="values-title">
+            <div class="container">
+                <h2 id="values-title" class="section-title">Our Values</h2>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-3 text-center">
+                        <i class="bi bi-people-fill impact-icon" aria-hidden="true"></i>
+                        <p class="fw-semibold mb-0">Inclusion</p>
+                        <p class="text-muted">Bridging rural-urban education gaps.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 text-center">
+                        <i class="bi bi-wifi-off impact-icon" aria-hidden="true"></i>
+                        <p class="fw-semibold mb-0">Offline-first</p>
+                        <p class="text-muted">Learning works beyond connectivity.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 text-center">
+                        <i class="bi bi-robot impact-icon" aria-hidden="true"></i>
+                        <p class="fw-semibold mb-0">Personalization</p>
+                        <p class="text-muted">Adaptive paths via responsible AI.</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 text-center">
+                        <i class="bi bi-shield-check impact-icon" aria-hidden="true"></i>
+                        <p class="fw-semibold mb-0">Trust</p>
+                        <p class="text-muted">Privacy, safety, and transparency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (Accordion) -->
+        <section class="py-5" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title" class="section-title">FAQ</h2>
+
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="q1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#a1" aria-expanded="false" aria-controls="a1">
+                                How does offline learning work?
+                            </button>
+                        </h3>
+                        <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Content is cached on the device and syncs when connectivity returns for progress and
+                                updates.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="q2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                                What analytics do teachers see?
+                            </button>
+                        </h3>
+                        <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Class-level and student-level progress, strengths, and suggested next steps to tailor
+                                instruction.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="q3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                                Is student data private and secure?
+                            </button>
+                        </h3>
+                        <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Data is minimized, protected in transit and at rest, and used only to enhance learning
+                                outcomes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="py-5 bg-light" id="timeline" aria-labelledby="timeline-title">
+            <div class="container">
+                <h2 id="timeline-title" class="section-title">Journey</h2>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">Ideation for Smart India Hackathon 2025.</li>
+                    <li class="list-group-item">Prototype with offline sync and teacher dashboard.</li>
+                    <li class="list-group-item">Pilot in partner rural schools and iterative feedback.</li>
+                    <li class="list-group-item">Public launch with community content partners.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="py-5" id="team" aria-labelledby="team-title">
+            <div class="container">
+                <h2 id="team-title" class="section-title">Team</h2>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body">
+                                <h5 class="team-name">Member One</h5>
+                                <p class="mb-1 text-muted">Lead – Product & Partnerships</p>
+                                <p>Focuses on school outreach and local context integration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body">
+                                <h5 class="team-name">Member Two</h5>
+                                <p class="mb-1 text-muted">Engineering – Platform</p>
+                                <p>Builds offline-first modules and sync infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body">
+                                <h5 class="team-name">Member Three</h5>
+                                <p class="mb-1 text-muted">AI – Learning Pathways</p>
+                                <p>Designs responsible personalization and assessments.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body">
+                                <h5 class="team-name">Member Four</h5>
+                                <p class="mb-1 text-muted">AI – Learning Pathways</p>
+                                <p>Designs responsible personalization and assessments.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body">
+                                <h5 class="team-name">Member Fifth</h5>
+                                <p class="mb-1 text-muted">AI – Learning Pathways</p>
+                                <p>Designs responsible personalization and assessments.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body">
+                                <h5 class="team-name">Member Sixth</h5>
+                                <p class="mb-1 text-muted">AI – Learning Pathways</p>
+                                <p>Designs responsible personalization and assessments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center small text-muted">
+        © 2025 EduNabha. All rights reserved.
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../assets/js/about.js"></script>
+</body>
+
+</html>

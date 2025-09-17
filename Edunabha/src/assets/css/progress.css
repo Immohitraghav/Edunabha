@@ -1,0 +1,48 @@
+/* commit: feat(progress-hero): gradient hero aligned to brand */
+.hero {
+    background-image: var(--brand-gradient);
+    color: #ffffff;
+    padding: 5rem 0 4rem;
+    text-align: center;
+}
+
+.hero .brand {
+    font-weight: 700;
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #fff;
+}
+
+.cta-btn {
+    box-shadow: var(--shadow);
+}
+
+/* commit: feat(progress-card): themed cards and spacing */
+.gradient-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+/* commit: feat(progress-bar): gradient fill and smooth animation */
+.progress {
+    height: 10px;
+    background-color: rgba(42, 127, 189, .1);
+}
+
+.progress .progress-bar.progress-fill {
+    background-image: var(--brand-gradient);
+    width: 0%;
+    /* animated to target with JS */
+    transition: width .9s ease-in-out;
+    border-radius: 6px;
+}
+
+/* commit: chore(responsive): tighter hero on small screens */
+@media (max-width: 575.98px) {
+    .hero {
+        padding: 3.5rem 0 3rem;
+    }
+}

@@ -1,0 +1,43 @@
+/* commit: feat(about-hero): add gradient hero matching brand palette */
+.inner-hero {
+    background-image: var(--brand-gradient);
+    color: #ffffff;
+    padding: 5rem 0;
+}
+
+/* commit: fix(about-hero-text): ensure lead text is white over gradient */
+.inner-hero .lead {
+    color: #ffffff;
+}
+
+
+/* commit: style(feedback-card): align with feature-card visuals and form focus */
+#feedbackCta.btn {
+    box-shadow: var(--shadow);
+}
+
+#story .feature-card {
+    border: 1px solid var(--border);
+}
+
+/* commit: style(accordion): tune Bootstrap via CSS variables for consistent accents */
+#faq .accordion {
+    --bs-accordion-active-bg: rgba(58, 175, 133, 0.08);
+    --bs-accordion-active-color: var(--text-color);
+    --bs-accordion-border-color: var(--border);
+    --bs-accordion-btn-focus-border-color: #2a7fbd;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(42, 127, 189, .25);
+}
+
+/* commit: style(team): emphasize names with gradient text */
+.team-name {
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* commit: chore(spacing): harmonize vertical rhythm for light sections */
+#timeline .list-group-item {
+    border-color: var(--border);
+}

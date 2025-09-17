@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Programs – EduNabha</title>
+    <meta name="description"
+        content="Explore EduNabha programs with interactive content, teacher tools, and offline-ready learning." />
+    <meta name="theme-color" content="#2a7fbd" />
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="dns-prefetch" href="//images.unsplash.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Site CSS (tokens → base → page) -->
+    <link rel="stylesheet" href="../assets/css/themes.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/programs.css" />
+</head>
+
+<body>
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top gradient-navbar" aria-label="Primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">EduNabha</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="programs.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+
+                <!-- keep IDs for on-page filtering support -->
+                <form class="d-flex ms-auto" id="programSearchForm" role="search" aria-label="Search programs">
+                    <input class="form-control me-2" id="programSearchInput" type="search"
+                        placeholder="Search programs..." aria-label="Search programs" />
+                    <button class="btn btn-gradient" type="submit" aria-label="Submit program search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" aria-labelledby="hero-title">
+        <div class="hero-content container text-center">
+            <h1 id="hero-title">“Education is not the filling of a pail,<br> but the lighting of a fire.” 🔥</h1>
+            <p>Explore programs that spark curiosity, build skills, and shape the future with <span
+                    class="brand">EduNabha</span> 🚀</p>
+            <a href="#programs" class="cta-btn">Start Your Journey</a>
+        </div>
+    </header>
+
+    <!-- Programs -->
+    <main id="main">
+        <section id="programs" class="container my-5" aria-labelledby="programs-title">
+            <h2 id="programs-title" class="section-title text-center mb-4">Programs</h2>
+
+            <div class="row g-4" id="programCards">
+                <!-- Program Card 1 -->
+                <div class="col-md-4">
+                    <div class="card program-card h-100" data-title="Math Foundations"
+                        data-keywords="math arithmetic algebra geometry trigonometry"
+                        data-desc="Sharpen basics with engaging topics like Algebra, Geometry, and Trigonometry."
+                        data-link="math.html"
+                        data-img="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Math Foundations" width="800" height="450" loading="lazy"
+                            decoding="async" />
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0">Math Foundations</h5>
+                            <a href="math.html" class="btn btn-learn open-page-btn"
+                                aria-label="Open Math Foundations">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 2 -->
+                <div class="col-md-4">
+                    <div class="card program-card h-100" data-title="Science Adventures"
+                        data-keywords="science physics chemistry biology experiments"
+                        data-desc="Discover physics, chemistry, and biology through stories and experiments."
+                        data-link="science.html"
+                        data-img="https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Science Adventures" width="800" height="450" loading="lazy"
+                            decoding="async" />
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0">Science Adventures</h5>
+                            <a href="science.html" class="btn btn-learn open-page-btn"
+                                aria-label="Open Science Adventures">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 3 -->
+                <div class="col-md-4">
+                    <div class="card program-card h-100" data-title="Digital Skills"
+                        data-keywords="digital literacy web coding cyber safety ai"
+                        data-desc="Learn web basics, coding, cyber safety, and AI fundamentals."
+                        data-link="digital.html"
+                        data-img="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Digital Skills" width="800" height="450" loading="lazy"
+                            decoding="async" />
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0">Digital Skills</h5>
+                            <a href="digital.html" class="btn btn-learn open-page-btn"
+                                aria-label="Open Digital Skills">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 4 -->
+                <div class="col-md-4">
+                    <div class="card program-card h-100" data-title="English Essentials"
+                        data-keywords="english grammar vocabulary writing speaking"
+                        data-desc="Boost grammar, vocabulary, writing, and speaking with fun practice."
+                        data-link="english.html"
+                        data-img="https://images.unsplash.com/photo-1509112756314-34a0badb29d4?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1509112756314-34a0badb29d4?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="English Essentials" width="800" height="450" loading="lazy"
+                            decoding="async" />
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0">English Essentials</h5>
+                            <a href="english.html" class="btn btn-learn open-page-btn"
+                                aria-label="Open English Essentials">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 5 -->
+                <div class="col-md-4">
+                    <div class="card program-card h-100" data-title="Coding Basics"
+                        data-keywords="coding python javascript c git projects"
+                        data-desc="Start with Python, JavaScript, C, and Git to build real projects."
+                        data-link="coding.html"
+                        data-img="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Coding Basics" width="800" height="450" loading="lazy"
+                            decoding="async" />
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0">Coding Basics</h5>
+                            <a href="sub-pages/coding.html" class="btn btn-learn open-page-btn"
+                                aria-label="Open Coding Basics">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Card 6 -->
+                <div class="col-md-4">
+                    <div class="card program-card h-100" data-title="Life Skills"
+                        data-keywords="life skills time finance communication thinking"
+                        data-desc="Time, finance, communication, and thinking skills for every day."
+                        data-link="life-skills.html"
+                        data-img="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80">
+                        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Life Skills" width="800" height="450" loading="lazy"
+                            decoding="async" />
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0">Life Skills</h5>
+                            <a href="life-skills.html" class="btn btn-learn open-page-btn"
+                                aria-label="Open Life Skills">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search feedback (used by scripts.js) -->
+            <p id="noResults" class="text-center text-muted mt-3 d-none" role="status" aria-live="polite">
+                No programs found. Try another search.
+            </p>
+        </section>
+    </main>
+
+    <!-- Program Preview Modal -->
+    <div class="modal fade" id="programPreviewModal" tabindex="-1" aria-labelledby="programPreviewLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered"><!-- default size (~500px) -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-6" id="programPreviewLabel">Program Preview</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row g-3 align-items-start">
+                            <!-- Left: image -->
+                            <div class="col-5">
+                                <img id="programPreviewImg" class="img-fluid rounded preview-img" alt="">
+                            </div>
+
+                            <!-- Right: details -->
+                            <div class="col-7">
+                                <h5 id="programPreviewTitle" class="fw-bold mb-1"></h5>
+                                <p id="programPreviewDesc" class="mb-2 small text-muted"></p>
+
+                                <!-- Optional quick facts built from data-keywords -->
+                                <ul id="programPreviewPoints" class="mb-0 small ps-3"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-between">
+                    <a id="programPreviewOpenBtn" href="#" class="btn btn-learn">Open Page</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="py-4 text-center small text-muted">© 2025 EduNabha. All rights reserved.</footer>
+
+    <!-- Bootstrap JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page JS (modal preview) -->
+    <script defer src="../assets/js/programs.js"></script>
+
+    <!-- Core site JS (search/filter) -->
+    <script defer src="../assets/js/scripts.js"></script>
+</body>
+
+</html>

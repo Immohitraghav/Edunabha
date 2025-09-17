@@ -1,0 +1,46 @@
+/* commit: feat(auth-card): gradient header feel across the container */
+.gradient-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+/* commit: feat(auth-pills): gradient active pill for tabs */
+#authTabs .nav-link {
+    border-radius: 999px;
+}
+
+#authTabs .nav-link.active {
+    color: #fff;
+    background-image: var(--brand-gradient);
+    box-shadow: var(--shadow);
+}
+
+/* commit: style(password-toggle): harmonize input-group button */
+.input-group .password-toggle {
+    border-color: var(--border);
+}
+
+/* commit: feat(strength-meter): color steps */
+.progress .progress-bar.bg-weak {
+    background-color: #dc3545;
+}
+
+.progress .progress-bar.bg-fair {
+    background-color: #fd7e14;
+}
+
+.progress .progress-bar.bg-good {
+    background-color: #ffc107;
+}
+
+.progress .progress-bar.bg-strong {
+    background-color: #198754;
+}
+
+/* commit: style(modal): align reset modal with brand borders */
+#resetModal .modal-header,
+#resetModal .modal-footer {
+    border-color: var(--border);
+}

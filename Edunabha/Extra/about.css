@@ -1,0 +1,48 @@
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Hero tweaks */
+.inner-hero {
+    background: var(--green-blue-gradient);
+    padding: 4rem 1rem;
+}
+
+/* Section title already styled in site CSS */
+
+/* Anchor offset for sticky navbar */
+#story,
+#values,
+#faq,
+#timeline,
+#team,
+#feedback {
+    scroll-margin-top: 80px;
+}
+
+/* Accordion focus visibility */
+.accordion-button:focus-visible {
+    outline: 2px solid #2a7fbd;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}

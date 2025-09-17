@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Login or sign up to EduNabha for inclusive digital learning tailored for rural students and administrators in India." />
+    <meta name="keywords"
+        content="EduNabha login, EduNabha signup, rural education, digital learning, student login, admin login" />
+    <title>EduNabha – Login or Sign Up</title>
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Site CSS (tokens → base → page) -->
+    <link rel="stylesheet" href="../assets/css/themes.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/auth.css" />
+</head>
+
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top gradient-navbar" aria-label="Primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">EduNabha</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Login</a></li>
+                </ul>
+
+                <form class="d-flex ms-auto" action="index.html#programs" role="search" aria-label="Search programs">
+                    <input class="form-control me-2" type="search" placeholder="Search programs..."
+                        aria-label="Search programs" />
+                    <button class="btn btn-gradient" type="submit" aria-label="Submit program search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login/Signup Section -->
+    <main id="main">
+        <section id="auth" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 col-lg-6">
+                        <div class="card gradient-card shadow">
+                            <div class="card-body p-4">
+                                <!-- commit: feat(auth-tabs): gradient pills with three flows -->
+                                <ul class="nav nav-pills nav-fill mb-4" id="authTabs" role="tablist"
+                                    aria-label="Authentication tabs">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="login-tab" data-bs-toggle="pill"
+                                            data-bs-target="#login-form" type="button" role="tab"
+                                            aria-controls="login-form" aria-selected="true">
+                                            Login
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="student-signup-tab" data-bs-toggle="pill"
+                                            data-bs-target="#student-signup-form" type="button" role="tab"
+                                            aria-controls="student-signup-form" aria-selected="false">
+                                            Student Signup
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="admin-signup-tab" data-bs-toggle="pill"
+                                            data-bs-target="#admin-signup-form" type="button" role="tab"
+                                            aria-controls="admin-signup-form" aria-selected="false">
+                                            Admin Signup
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab Content -->
+                                <div class="tab-content" id="authTabContent">
+                                    <!-- Login Form -->
+                                    <div class="tab-pane fade show active" id="login-form" role="tabpanel"
+                                        aria-labelledby="login-tab" tabindex="0">
+                                        <h3 class="text-center mb-4">Login to EduNabha</h3>
+                                        <!-- commit: feat(login-remember): add remember me + forgot password -->
+                                        <form id="loginForm" class="needs-validation" novalidate method="post"
+                                            action="#" autocomplete="on">
+                                            <div class="mb-3">
+                                                <label for="loginAccountType" class="form-label">Account Type</label>
+                                                <select class="form-select" id="loginAccountType" name="account_type"
+                                                    required aria-label="Select account type">
+                                                    <option value="" disabled selected>Select account type</option>
+                                                    <option value="student">Student</option>
+                                                    <option value="admin">Admin</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select an account type.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="loginUsername" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="loginUsername"
+                                                    name="username" placeholder="Enter username" aria-label="Username"
+                                                    autocomplete="username" required />
+                                                <div class="invalid-feedback">Enter a valid username.</div>
+                                            </div>
+
+                                            <div class="mb-2">
+                                                <label for="loginPassword" class="form-label">Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="loginPassword"
+                                                        name="password" placeholder="Enter password"
+                                                        aria-label="Password" autocomplete="current-password"
+                                                        spellcheck="false" enterkeyhint="go" required />
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary password-toggle"
+                                                        aria-controls="loginPassword" aria-pressed="false"
+                                                        aria-label="Show password">
+                                                        <i class="bi bi-eye" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="form-text text-warning small d-none" id="loginCaps">Caps
+                                                    Lock is ON</div>
+                                                <div class="invalid-feedback">Enter a valid password.</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="rememberMe" />
+                                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                                </div>
+                                                <button class="btn btn-link p-0 small" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#resetModal">
+                                                    Forgot password?
+                                                </button>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-gradient w-100"
+                                                aria-label="Login to EduNabha">
+                                                Login
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                    <!-- Student Signup Form -->
+                                    <div class="tab-pane fade" id="student-signup-form" role="tabpanel"
+                                        aria-labelledby="student-signup-tab" tabindex="0">
+                                        <h3 class="text-center mb-4">Sign Up as Student</h3>
+                                        <!-- commit: feat(password-strength): add strength meter and match check -->
+                                        <form id="studentSignupForm" class="needs-validation" novalidate method="post"
+                                            action="#" autocomplete="on">
+                                            <div class="mb-3">
+                                                <label for="studentName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="studentName" name="name"
+                                                    placeholder="Enter full name" aria-label="Full name"
+                                                    autocomplete="name" required />
+                                                <div class="invalid-feedback">Enter full name.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="studentEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="studentEmail" name="email"
+                                                    placeholder="Enter email" aria-label="Email" autocomplete="email"
+                                                    inputmode="email" required />
+                                                <div class="invalid-feedback">Enter a valid email address.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="studentClass" class="form-label">Class/Grade</label>
+                                                <select class="form-select" id="studentClass" name="class"
+                                                    aria-label="Select class or grade" required>
+                                                    <option value="" disabled selected>Select your class</option>
+                                                    <option value="6">Class 6</option>
+                                                    <option value="7">Class 7</option>
+                                                    <option value="8">Class 8</option>
+                                                    <option value="9">Class 9</option>
+                                                    <option value="10">Class 10</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select a class.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="studentPassword" class="form-label">Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="studentPassword"
+                                                        name="password" placeholder="Enter password"
+                                                        aria-label="Password" minlength="8" autocomplete="new-password"
+                                                        spellcheck="false" required />
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary password-toggle"
+                                                        aria-controls="studentPassword" aria-pressed="false"
+                                                        aria-label="Show password">
+                                                        <i class="bi bi-eye" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                                <!-- strength meter -->
+                                                <div class="progress mt-2" style="height:6px;">
+                                                    <div id="studentStrengthBar" class="progress-bar" role="progressbar"
+                                                        style="width: 0%"></div>
+                                                </div>
+                                                <div class="form-text">Use at least 8 characters with letters, numbers,
+                                                    and a symbol.</div>
+                                                <div class="invalid-feedback">Password must be at least 8 characters.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="studentConfirmPassword" class="form-label">Confirm
+                                                    Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control"
+                                                        id="studentConfirmPassword" name="confirm_password"
+                                                        placeholder="Confirm password" aria-label="Confirm password"
+                                                        minlength="8" autocomplete="new-password" spellcheck="false"
+                                                        required />
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary password-toggle"
+                                                        aria-controls="studentConfirmPassword" aria-pressed="false"
+                                                        aria-label="Show password">
+                                                        <i class="bi bi-eye" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="invalid-feedback">Passwords must match.</div>
+                                            </div>
+
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="studentTos"
+                                                    required>
+                                                <label class="form-check-label" for="studentTos">I agree to the
+                                                    Terms</label>
+                                                <div class="invalid-feedback">Please accept the terms to continue.</div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-gradient w-100"
+                                                aria-label="Sign up as student">Sign Up</button>
+                                        </form>
+                                    </div>
+
+                                    <!-- Admin Signup Form -->
+                                    <div class="tab-pane fade" id="admin-signup-form" role="tabpanel"
+                                        aria-labelledby="admin-signup-tab" tabindex="0">
+                                        <h3 class="text-center mb-4">Sign Up as Admin</h3>
+                                        <form id="adminSignupForm" class="needs-validation" novalidate method="post"
+                                            action="#" autocomplete="on">
+                                            <div class="mb-3">
+                                                <label for="adminName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="adminName" name="name"
+                                                    placeholder="Enter full name" aria-label="Full name"
+                                                    autocomplete="name" required />
+                                                <div class="invalid-feedback">Enter full name.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="adminEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="adminEmail" name="email"
+                                                    placeholder="Enter email" aria-label="Email" autocomplete="email"
+                                                    inputmode="email" required />
+                                                <div class="invalid-feedback">Enter a valid email address.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="adminCode" class="form-label">Admin Code</label>
+                                                <input type="text" class="form-control" id="adminCode" name="admin_code"
+                                                    placeholder="Enter admin code" aria-label="Admin code"
+                                                    autocomplete="one-time-code" inputmode="text" required />
+                                                <div class="invalid-feedback">Enter a valid admin code.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="adminPassword" class="form-label">Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control" id="adminPassword"
+                                                        name="password" placeholder="Enter password"
+                                                        aria-label="Password" minlength="8" autocomplete="new-password"
+                                                        spellcheck="false" required />
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary password-toggle"
+                                                        aria-controls="adminPassword" aria-pressed="false"
+                                                        aria-label="Show password">
+                                                        <i class="bi bi-eye" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="progress mt-2" style="height:6px;">
+                                                    <div id="adminStrengthBar" class="progress-bar" role="progressbar"
+                                                        style="width: 0%"></div>
+                                                </div>
+                                                <div class="form-text">Use at least 8 characters with letters, numbers,
+                                                    and a symbol.</div>
+                                                <div class="invalid-feedback">Password must be at least 8 characters.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="adminConfirmPassword" class="form-label">Confirm
+                                                    Password</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control"
+                                                        id="adminConfirmPassword" name="confirm_password"
+                                                        placeholder="Confirm password" aria-label="Confirm password"
+                                                        minlength="8" autocomplete="new-password" spellcheck="false"
+                                                        required />
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary password-toggle"
+                                                        aria-controls="adminConfirmPassword" aria-pressed="false"
+                                                        aria-label="Show password">
+                                                        <i class="bi bi-eye" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="invalid-feedback">Passwords must match.</div>
+                                            </div>
+
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="adminTos" required>
+                                                <label class="form-check-label" for="adminTos">I agree to the
+                                                    Terms</label>
+                                                <div class="invalid-feedback">Please accept the terms to continue.</div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-gradient w-100"
+                                                aria-label="Sign up as admin">Sign Up</button>
+                                        </form>
+                                    </div>
+                                </div><!-- /.tab-content -->
+                            </div><!-- /.card-body -->
+                        </div><!-- /.card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- commit: feat(auth-reset-modal): email-only reset dialog (frontend only) -->
+    <div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-6" id="resetModalLabel">Reset password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-2">Enter the email to receive a reset link (demo flow).</p>
+                    <input type="email" id="resetEmail" class="form-control" placeholder="name@example.com"
+                        aria-label="Reset email" />
+                    <div class="invalid-feedback d-block d-none" id="resetEmailError">Enter a valid email.</div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="sendReset" class="btn btn-learn">Send link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 text-center small text-muted">© 2025 EduNabha. All rights reserved.</footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../assets/js/auth.js"></script>
+</body>
+
+</html>

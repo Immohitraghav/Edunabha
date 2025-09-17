@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Track your learning progress with EduNabha's courses, including Math, Science, Coding, and more for rural students in India." />
+    <meta name="keywords"
+        content="EduNabha progress, course tracking, rural education, digital learning, student progress" />
+    <title>Progress | EduNabha</title>
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Site-wide and page CSS (from /src/pages → /src/assets) -->
+    <link rel="stylesheet" href="../assets/css/themes.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/progress.css">
+</head>
+
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top gradient-navbar" aria-label="Primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">EduNabha</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+                <form class="d-flex ms-auto" action="index.html#programs" role="search" aria-label="Search programs">
+                    <input class="form-control me-2" type="search" placeholder="Search programs..."
+                        aria-label="Search programs" />
+                    <button class="btn btn-gradient" type="submit" aria-label="Submit program search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-content container text-center">
+            <h1 id="hero-title">Track Your Learning Journey with <span class="brand">EduNabha</span> 📈</h1>
+            <p>Monitor your progress, stay motivated, and achieve your goals! 🚀</p>
+            <a href="#progress" class="btn btn-gradient cta-btn">View Your Progress</a>
+        </div>
+    </header>
+
+    <!-- Progress Tracking Section -->
+    <main>
+        <section id="progress" class="container my-5" aria-labelledby="progress-title">
+            <h2 id="progress-title" class="section-title">Your Course Progress</h2>
+
+            <!-- Local filter -->
+            <form id="progressSearchForm" class="row g-2 align-items-center mb-4" role="search"
+                aria-label="Filter courses">
+                <div class="col-sm-8 col-md-6">
+                    <label for="progressSearchInput" class="visually-hidden">Search courses</label>
+                    <input id="progressSearchInput" class="form-control" type="search"
+                        placeholder="Search courses by name or topic…" aria-label="Search courses" />
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-gradient" type="submit" aria-label="Apply course search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="row g-4" id="progressCards">
+                <!-- Card template note: each .progress element uses role=progressbar with aria- values per Bootstrap guidance -->
+                <div class="col-md-4 progress-card" data-title="Math Foundations"
+                    data-keywords="math arithmetic algebra">
+                    <div class="card gradient-card position-relative h-100">
+                        <div class="card-body">
+                            <h5 id="title-math">Math Foundations</h5>
+                            <p class="text-muted">Completion: 75%</p>
+                            <div class="progress" role="progressbar" aria-labelledby="title-math" aria-valuemin="0"
+                                aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-fill" data-target="75"></div>
+                            </div>
+                            <p class="text-muted mt-2">Remaining: 25% (5 lessons)</p>
+                            <a href="math.html" class="btn btn-gradient btn-learn"
+                                aria-label="Continue Math Foundations">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 progress-card" data-title="Science Explorer"
+                    data-keywords="science physics chemistry biology">
+                    <div class="card gradient-card position-relative h-100">
+                        <div class="card-body">
+                            <h5 id="title-science">Science Explorer</h5>
+                            <p class="text-muted">Completion: 50%</p>
+                            <div class="progress" role="progressbar" aria-labelledby="title-science" aria-valuemin="0"
+                                aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-fill" data-target="50"></div>
+                            </div>
+                            <p class="text-muted mt-2">Remaining: 50% (10 lessons)</p>
+                            <a href="science.html" class="btn btn-gradient btn-learn"
+                                aria-label="Continue Science Explorer">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 progress-card" data-title="Coding Basics" data-keywords="coding python javascript">
+                    <div class="card gradient-card position-relative h-100">
+                        <div class="card-body">
+                            <h5 id="title-coding">Coding Basics</h5>
+                            <p class="text-muted">Completion: 20%</p>
+                            <div class="progress" role="progressbar" aria-labelledby="title-coding" aria-valuemin="0"
+                                aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-fill" data-target="20"></div>
+                            </div>
+                            <p class="text-muted mt-2">Remaining: 80% (16 lessons)</p>
+                            <a href="coding.html" class="btn btn-gradient btn-learn"
+                                aria-label="Continue Coding Basics">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 progress-card" data-title="English Skills"
+                    data-keywords="english grammar vocabulary">
+                    <div class="card gradient-card position-relative h-100">
+                        <div class="card-body">
+                            <h5 id="title-english">English Skills</h5>
+                            <p class="text-muted">Completion: 90%</p>
+                            <div class="progress" role="progressbar" aria-labelledby="title-english" aria-valuemin="0"
+                                aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-fill" data-target="90"></div>
+                            </div>
+                            <p class="text-muted mt-2">Remaining: 10% (2 lessons)</p>
+                            <a href="english.html" class="btn btn-gradient btn-learn"
+                                aria-label="Continue English Skills">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 progress-card" data-title="Digital Literacy"
+                    data-keywords="computer internet safety">
+                    <div class="card gradient-card position-relative h-100">
+                        <div class="card-body">
+                            <h5 id="title-digital">Digital Literacy</h5>
+                            <p class="text-muted">Completion: 60%</p>
+                            <div class="progress" role="progressbar" aria-labelledby="title-digital" aria-valuemin="0"
+                                aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-fill" data-target="60"></div>
+                            </div>
+                            <p class="text-muted mt-2">Remaining: 40% (8 lessons)</p>
+                            <a href="digital.html" class="btn btn-gradient btn-learn"
+                                aria-label="Continue Digital Literacy">Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 progress-card" data-title="Exam Readiness" data-keywords="practice tests quizzes">
+                    <div class="card gradient-card position-relative h-100">
+                        <div class="card-body">
+                            <h5 id="title-exam">Exam Readiness</h5>
+                            <p class="text-muted">Completion: 30%</p>
+                            <div class="progress" role="progressbar" aria-labelledby="title-exam" aria-valuemin="0"
+                                aria-valuemax="100" aria-valuenow="0">
+                                <div class="progress-bar progress-fill" data-target="30"></div>
+                            </div>
+                            <p class="text-muted mt-2">Remaining: 70% (14 lessons)</p>
+                            <a href="exam.html" class="btn btn-gradient btn-learn"
+                                aria-label="Continue Exam Readiness">Continue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p id="noResults" class="text-center text-muted mt-3 d-none" role="status" aria-live="polite">
+                No courses found. Try another search.
+            </p>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center small text-muted">© 2025 EduNabha. All rights reserved.</footer>
+
+    <!-- Bootstrap JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Page JS -->
+    <script defer src="../assets/js/progress.js"></script>
+</body>
+
+</html>

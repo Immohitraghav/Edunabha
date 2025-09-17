@@ -1,0 +1,68 @@
+:root {
+    --blue: #2a7fbd;
+    --green: #2bb673;
+    --green-blue-gradient: linear-gradient(135deg, var(--blue), var(--green));
+    --button-gradient: linear-gradient(45deg, var(--blue), var(--green));
+}
+
+.gradient-navbar {
+    background: var(--green-blue-gradient);
+}
+
+.sub-hero {
+    background: linear-gradient(135deg, rgba(42, 127, 189, 0.1), rgba(43, 182, 115, 0.1));
+    padding: 2rem 1rem;
+}
+
+.playlist-panel {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    border-radius: 12px;
+    padding: 0.75rem;
+    background: #fff;
+}
+
+#videoList .list-group-item {
+    cursor: pointer;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+#videoList .thumb {
+    width: 68px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+#videoList .meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+#videoList .title {
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#videoList .sub {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+#videoList .active {
+    border-left: 4px solid var(--green);
+    background-color: rgba(43, 182, 115, 0.08);
+}
+
+a:focus-visible,
+button:focus-visible,
+.list-group-item:focus-visible {
+    outline: 2px solid #2a7fbd;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
