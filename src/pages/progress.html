@@ -1,0 +1,14 @@
+@@ .. @@
+     <script defer src="../assets/js/progress.js"></script>
++    <script>
++        // Require authentication for progress page
++        document.addEventListener('DOMContentLoaded', () => {
++            if (!AuthGuard.requireAuth()) {
++                return;
++            }
++        });
++    </script>
++    <script defer src="../assets/js/auth-guard.js"></script>
+ </body>
+ 
+ </html>
