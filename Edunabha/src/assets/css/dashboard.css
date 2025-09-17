@@ -1,0 +1,265 @@
+/* Dashboard-specific styles */
+:root {
+    --dashboard-bg: #f8fafc;
+    --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    background-color: var(--dashboard-bg);
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease;
+    background: var(--surface);
+}
+
+.dashboard-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+.dashboard-card .card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+}
+
+.dashboard-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Profile Section */
+.profile-avatar {
+    margin-bottom: 1rem;
+}
+
+.profile-stats {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.stat-item {
+    padding: 0.5rem;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--muted-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Progress Section */
+.progress-summary {
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(42, 127, 189, 0.05), rgba(43, 182, 115, 0.05));
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    background-image: var(--brand-gradient);
+    transition: width 0.8s ease-in-out;
+    border-radius: 6px;
+}
+
+.streak-info {
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+/* Activity List */
+.activity-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    display: flex;
+    align-items-center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-title {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.activity-time {
+    font-size: 0.875rem;
+    color: var(--muted-text);
+}
+
+/* Course Cards */
+.course-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    background: var(--surface);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-hover-shadow);
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-progress {
+    margin-top: 1rem;
+}
+
+.course-progress .progress {
+    height: 8px;
+    background-color: rgba(42, 127, 189, 0.1);
+}
+
+.course-progress .progress-bar {
+    background-image: var(--brand-gradient);
+}
+
+/* Quick Actions */
+.quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    background: var(--surface);
+    min-height: 120px;
+}
+
+.quick-action-btn:hover {
+    border-color: var(--brand-1);
+    background: linear-gradient(135deg, rgba(42, 127, 189, 0.05), rgba(43, 182, 115, 0.05));
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.quick-action-btn i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.quick-action-btn span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Achievement Badges */
+.achievement-badge {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    transition: all 0.3s ease;
+}
+
+.achievement-badge.earned {
+    border-color: var(--brand-1);
+    background: linear-gradient(135deg, rgba(42, 127, 189, 0.05), rgba(43, 182, 115, 0.05));
+}
+
+.achievement-badge i {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.achievement-badge h6 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-badge p {
+    color: var(--muted-text);
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-card .card-body {
+        padding: 1rem;
+    }
+    
+    .profile-stats .row {
+        text-align: center;
+    }
+    
+    .quick-action-btn {
+        min-height: 100px;
+        padding: 1rem 0.5rem;
+    }
+    
+    .quick-action-btn i {
+        font-size: 1.5rem;
+    }
+    
+    .quick-action-btn span {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation for progress bars */
+@keyframes progressAnimation {
+    from {
+        width: 0%;
+    }
+}
+
+.progress-fill {
+    animation: progressAnimation 1s ease-in-out;
+}

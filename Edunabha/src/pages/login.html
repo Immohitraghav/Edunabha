@@ -89,67 +89,223 @@
 
                                 <!-- Tab Content -->
                                 <div class="tab-content" id="authTabContent">
-                                    <!-- Login Form -->
+                                    <!-- Initial Choice Screen -->
                                     <div class="tab-pane fade show active" id="login-form" role="tabpanel"
                                         aria-labelledby="login-tab" tabindex="0">
-                                        <h3 class="text-center mb-4">Login to EduNabha</h3>
-                                        <!-- commit: feat(login-remember): add remember me + forgot password -->
-                                        <form id="loginForm" class="needs-validation" novalidate method="post"
-                                            action="#" autocomplete="on">
-                                            <div class="mb-3">
-                                                <label for="loginAccountType" class="form-label">Account Type</label>
-                                                <select class="form-select" id="loginAccountType" name="account_type"
-                                                    required aria-label="Select account type">
-                                                    <option value="" disabled selected>Select account type</option>
-                                                    <option value="student">Student</option>
-                                                    <option value="admin">Admin</option>
-                                                </select>
-                                                <div class="invalid-feedback">Please select an account type.</div>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="loginUsername" class="form-label">Username</label>
-                                                <input type="text" class="form-control" id="loginUsername"
-                                                    name="username" placeholder="Enter username" aria-label="Username"
-                                                    autocomplete="username" required />
-                                                <div class="invalid-feedback">Enter a valid username.</div>
-                                            </div>
-
-                                            <div class="mb-2">
-                                                <label for="loginPassword" class="form-label">Password</label>
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control" id="loginPassword"
-                                                        name="password" placeholder="Enter password"
-                                                        aria-label="Password" autocomplete="current-password"
-                                                        spellcheck="false" enterkeyhint="go" required />
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary password-toggle"
-                                                        aria-controls="loginPassword" aria-pressed="false"
-                                                        aria-label="Show password">
-                                                        <i class="bi bi-eye" aria-hidden="true"></i>
+                                        <div id="initialChoice">
+                                            <h3 class="text-center mb-4">Welcome to EduNabha</h3>
+                                            <p class="text-center text-muted mb-4">Choose an option to continue</p>
+                                            
+                                            <div class="row g-3">
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-outline-primary w-100 h-100 py-4 choice-btn" 
+                                                            data-choice="login">
+                                                        <i class="bi bi-box-arrow-in-right fs-1 d-block mb-2"></i>
+                                                        <span class="fw-semibold">Login</span>
                                                     </button>
                                                 </div>
-                                                <div class="form-text text-warning small d-none" id="loginCaps">Caps
-                                                    Lock is ON</div>
-                                                <div class="invalid-feedback">Enter a valid password.</div>
-                                            </div>
-
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="rememberMe" />
-                                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-outline-success w-100 h-100 py-4 choice-btn" 
+                                                            data-choice="signup">
+                                                        <i class="bi bi-person-plus fs-1 d-block mb-2"></i>
+                                                        <span class="fw-semibold">Sign Up</span>
+                                                    </button>
                                                 </div>
-                                                <button class="btn btn-link p-0 small" type="button"
-                                                    data-bs-toggle="modal" data-bs-target="#resetModal">
-                                                    Forgot password?
+                                            </div>
+                                        </div>
+
+                                        <!-- User Type Selection -->
+                                        <div id="userTypeChoice" class="d-none">
+                                            <h3 class="text-center mb-4">Select User Type</h3>
+                                            <p class="text-center text-muted mb-4">Are you a student or an admin?</p>
+                                            
+                                            <div class="row g-3">
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-outline-info w-100 h-100 py-4 user-type-btn" 
+                                                            data-type="student">
+                                                        <i class="bi bi-mortarboard fs-1 d-block mb-2"></i>
+                                                        <span class="fw-semibold">Student</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-outline-warning w-100 h-100 py-4 user-type-btn" 
+                                                            data-type="admin">
+                                                        <i class="bi bi-shield-check fs-1 d-block mb-2"></i>
+                                                        <span class="fw-semibold">Admin</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="text-center mt-3">
+                                                <button type="button" class="btn btn-link" id="backToChoice">
+                                                    <i class="bi bi-arrow-left"></i> Back
                                                 </button>
                                             </div>
+                                        </div>
 
-                                            <button type="submit" class="btn btn-gradient w-100"
-                                                aria-label="Login to EduNabha">
-                                                Login
-                                            </button>
-                                        </form>
+                                        <!-- Login Form -->
+                                        <div id="loginFormContainer" class="d-none">
+                                            <h3 class="text-center mb-4">Login to EduNabha</h3>
+                                            <div class="alert alert-info text-center" id="loginUserType"></div>
+                                            
+                                            <form id="loginForm" class="needs-validation" novalidate method="post"
+                                                action="#" autocomplete="on">
+                                                <div class="mb-3">
+                                                    <label for="loginUsername" class="form-label">Username</label>
+                                                    <input type="text" class="form-control" id="loginUsername"
+                                                        name="username" placeholder="Enter username" aria-label="Username"
+                                                        autocomplete="username" required />
+                                                    <div class="invalid-feedback">Enter a valid username.</div>
+                                                </div>
+
+                                                <div class="mb-2">
+                                                    <label for="loginPassword" class="form-label">Password</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="loginPassword"
+                                                            name="password" placeholder="Enter password"
+                                                            aria-label="Password" autocomplete="current-password"
+                                                            spellcheck="false" enterkeyhint="go" required />
+                                                        <button type="button"
+                                                            class="btn btn-outline-secondary password-toggle"
+                                                            aria-controls="loginPassword" aria-pressed="false"
+                                                            aria-label="Show password">
+                                                            <i class="bi bi-eye" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-text text-warning small d-none" id="loginCaps">Caps
+                                                        Lock is ON</div>
+                                                    <div class="invalid-feedback">Enter a valid password.</div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="rememberMe" />
+                                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                                    </div>
+                                                    <button class="btn btn-link p-0 small" type="button"
+                                                        data-bs-toggle="modal" data-bs-target="#resetModal">
+                                                        Forgot password?
+                                                    </button>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-gradient w-100"
+                                                    aria-label="Login to EduNabha">
+                                                    Login
+                                                </button>
+                                            </form>
+                                            
+                                            <div class="text-center mt-3">
+                                                <button type="button" class="btn btn-link" id="backToUserType">
+                                                    <i class="bi bi-arrow-left"></i> Back
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sign Up Form -->
+                                        <div id="signupFormContainer" class="d-none">
+                                            <h3 class="text-center mb-4">Sign Up for EduNabha</h3>
+                                            <div class="alert alert-info text-center" id="signupUserType"></div>
+                                            
+                                            <form id="signupForm" class="needs-validation" novalidate method="post"
+                                                action="#" autocomplete="on">
+                                                <div class="mb-3">
+                                                    <label for="signupName" class="form-label">Full Name</label>
+                                                    <input type="text" class="form-control" id="signupName" name="name"
+                                                        placeholder="Enter full name" aria-label="Full name"
+                                                        autocomplete="name" required />
+                                                    <div class="invalid-feedback">Enter full name.</div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="signupEmail" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="signupEmail" name="email"
+                                                        placeholder="Enter email" aria-label="Email" autocomplete="email"
+                                                        inputmode="email" required />
+                                                    <div class="invalid-feedback">Enter a valid email address.</div>
+                                                </div>
+
+                                                <div class="mb-3" id="classField">
+                                                    <label for="signupClass" class="form-label">Class/Grade</label>
+                                                    <select class="form-select" id="signupClass" name="class"
+                                                        aria-label="Select class or grade">
+                                                        <option value="" disabled selected>Select your class</option>
+                                                        <option value="6">Class 6</option>
+                                                        <option value="7">Class 7</option>
+                                                        <option value="8">Class 8</option>
+                                                        <option value="9">Class 9</option>
+                                                        <option value="10">Class 10</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">Please select a class.</div>
+                                                </div>
+
+                                                <div class="mb-3" id="adminCodeField" style="display: none;">
+                                                    <label for="signupAdminCode" class="form-label">Admin Code</label>
+                                                    <input type="text" class="form-control" id="signupAdminCode" name="admin_code"
+                                                        placeholder="Enter admin code" aria-label="Admin code"
+                                                        autocomplete="one-time-code" inputmode="text" />
+                                                    <div class="invalid-feedback">Enter a valid admin code.</div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="signupPassword" class="form-label">Password</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="signupPassword"
+                                                            name="password" placeholder="Enter password"
+                                                            aria-label="Password" minlength="8" autocomplete="new-password"
+                                                            spellcheck="false" required />
+                                                        <button type="button"
+                                                            class="btn btn-outline-secondary password-toggle"
+                                                            aria-controls="signupPassword" aria-pressed="false"
+                                                            aria-label="Show password">
+                                                            <i class="bi bi-eye" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="progress mt-2" style="height:6px;">
+                                                        <div id="signupStrengthBar" class="progress-bar" role="progressbar"
+                                                            style="width: 0%"></div>
+                                                    </div>
+                                                    <div class="form-text">Use at least 8 characters with letters, numbers,
+                                                        and a symbol.</div>
+                                                    <div class="invalid-feedback">Password must be at least 8 characters.
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="signupConfirmPassword" class="form-label">Confirm
+                                                        Password</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control"
+                                                            id="signupConfirmPassword" name="confirm_password"
+                                                            placeholder="Confirm password" aria-label="Confirm password"
+                                                            minlength="8" autocomplete="new-password" spellcheck="false"
+                                                            required />
+                                                        <button type="button"
+                                                            class="btn btn-outline-secondary password-toggle"
+                                                            aria-controls="signupConfirmPassword" aria-pressed="false"
+                                                            aria-label="Show password">
+                                                            <i class="bi bi-eye" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="invalid-feedback">Passwords must match.</div>
+                                                </div>
+
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="signupTos" required>
+                                                    <label class="form-check-label" for="signupTos">I agree to the
+                                                        Terms</label>
+                                                    <div class="invalid-feedback">Please accept the terms to continue.</div>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-gradient w-100"
+                                                    aria-label="Sign up">Sign Up</button>
+                                            </form>
+                                            
+                                            <div class="text-center mt-3">
+                                                <button type="button" class="btn btn-link" id="backToUserTypeSignup">
+                                                    <i class="bi bi-arrow-left"></i> Back
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <!-- Student Signup Form -->
